@@ -26,7 +26,8 @@ const når du definerer variablene.
 
 let s = "hello, world!";
 const num = 10;
-var bool = true;
+let dogma =
+  "var is not to be used as function scoping and the hoisting behaviour is too difficult/confusing ";
 let arr = [1, 2, 3];
 
 /******************************************************************************
@@ -38,23 +39,33 @@ Prøv ut noen av operatorene vi så på i forrige forelesning:
 
 Skriv noen eksempler der du tester disse operatorene.
 ******************************************************************************/
-const createLogger = (object) => {
-  return () => {
-    console.log(`number is currently ${object.number}`);
-  };
-};
 
-const obj = {
-  number: 10,
-};
+let number = 0;
+console.log(`number is ${number}`);
 
-const log = createLogger(obj);
+console.log("executing += 10");
+number += 10;
+console.log(`number is ${number}`);
 
-log();
-obj.number += num;
-log();
-obj.number--;
-log();
+console.log("executing -= 2");
+number -= 2;
+console.log(`number is ${number}`);
+
+console.log("executing --");
+number--;
+console.log(`number is ${number}`);
+
+console.log("executing *= 2");
+number *= 2;
+console.log(`number is ${number}`);
+
+console.log("executing /= 2");
+number /= 2;
+console.log(`number is ${number}`);
+
+console.log("executing ++");
+number++;
+console.log(`number is ${number}`);
 
 /******************************************************************************
 OPPGAVE 4
@@ -106,9 +117,11 @@ Prøv å endre userMale til både true og false og bruk console.log for å sjekk
 at betingelsen din fungerer som den skal.
 ******************************************************************************/
 
-const userMale = true;
+const userMale = Boolean(Math.floor(Math.random() * 2));
 const userTitle = userMale ? "Mr." : "Mrs.";
 
-console.log(userMale);
+console.log(
+  `The user is a ${userMale ? "Male" : "Female"} and has ${userTitle} as title`,
+);
 
 // Skriv koden for oppgave 5 her
