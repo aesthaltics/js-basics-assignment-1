@@ -24,7 +24,10 @@ Du kan velge hva innholdet i variablene skal være. Prøv å bruke både let og
 const når du definerer variablene.
 ******************************************************************************/
 
-// Skriv koden for oppgave 2 her
+let s = "hello, world!";
+const num = 10;
+var bool = true;
+let arr = [1, 2, 3];
 
 /******************************************************************************
 OPPGAVE 3
@@ -35,8 +38,23 @@ Prøv ut noen av operatorene vi så på i forrige forelesning:
 
 Skriv noen eksempler der du tester disse operatorene.
 ******************************************************************************/
+const createLogger = (object) => {
+  return () => {
+    console.log(`number is currently ${object.number}`);
+  };
+};
 
-// Skriv koden for oppgave 3 her
+const obj = {
+  number: 10,
+};
+
+const log = createLogger(obj);
+
+log();
+obj.number += num;
+log();
+obj.number--;
+log();
 
 /******************************************************************************
 OPPGAVE 4
@@ -65,7 +83,13 @@ let userIsLoggedIn = false;
 let userIsBlocked = false;
 let goToPage = "";
 
-// Skriv koden for oppgave 4 her
+if (userName && userAge >= 18 && !userIsBlocked) {
+  userIsLoggedIn = true;
+  goToPage = "/home";
+  console.log(`Welcome ${userName}`);
+} else {
+  console.log("something went wrong signing in");
+}
 
 /******************************************************************************
 OPPGAVE 5
@@ -82,6 +106,9 @@ Prøv å endre userMale til både true og false og bruk console.log for å sjekk
 at betingelsen din fungerer som den skal.
 ******************************************************************************/
 
-const userMale = false;
+const userMale = true;
+const userTitle = userMale ? "Mr." : "Mrs.";
+
+console.log(userMale);
 
 // Skriv koden for oppgave 5 her
